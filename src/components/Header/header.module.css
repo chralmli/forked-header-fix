@@ -1,93 +1,78 @@
 .header {
-    background-color: #333;
-    padding: 1rem 0;
-  }
-  
+  background-color: #333;
+  padding: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 900px) {
   .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .brand {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
-  
-  .hamburger {
-    cursor: pointer;
     display: none;
-  }
-  
-  .hamburgerLine {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 6px 0;
-  }
-  
-  .ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .li {
-    margin: 0 15px;
-  }
-  
-  .link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .showMenu {
-    display: flex;
     flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     background-color: #333;
-    z-index: 1;
   }
 
-  @media screen and (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-  
-    .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .ul {
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: #333;
-      display: none;
-    }
-  
-    .showMenu {
-      display: flex;
-    }
-  
-    .li {
-      margin: 15px 0;
-    }
+  .nav.show {
+    display: flex;
   }
-  
+
+  .nav a {
+    margin: 0;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #555;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: block;
+  }
+
+  .hamburgerLine {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .close .hamburgerLine:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .close .hamburgerLine:nth-child(2) {
+    opacity: 0;
+  }
+
+  .close .hamburgerLine:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}

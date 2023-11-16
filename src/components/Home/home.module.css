@@ -72,6 +72,13 @@
   letter-spacing: 5px;
 }
 
+@media only screen and (max-width: 400px) {
+  .welcomeHeader {
+    font-size: 24px;
+    letter-spacing: 3px;
+  }
+}
+
 .skillsParagraph {
   margin: 1rem;
   font-size: 26px;
@@ -110,5 +117,3 @@
     max-width: none;
   }
 }
-
-/* =============================================== */

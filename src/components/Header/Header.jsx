@@ -1,48 +1,29 @@
 import React, { useState } from 'react';
-import header from './header.module.css';
+import styles from './header.module.css';
 
 const Header = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
+  const toggleNav = () => {
+    setShowNav(!showNav);
   };
 
   return (
-    <header className={header.header}>
-      <nav className={header.nav}>
-        <div className={header.container}>
-          <a href="/" className={header.brand}>
-            NeNorvalls
-          </a>
-
-          <div className={header.hamburger} onClick={toggleMenu}>
-            {/* Improved hamburger icon using semantic HTML */}
-            <div className={header.hamburgerLine}></div>
-            <div className={header.hamburgerLine}></div>
-            <div className={header.hamburgerLine}></div>
-          </div>
-
-          <ul className={`${header.ul} ${isMenuOpen ? header.showMenu : ''}`}>
-            {/* Navigation links with improved styling */}
-            <li className={header.li}>
-              <a href="/" className={header.link}>
-                Home
-              </a>
-            </li>
-            <li className={header.li}>
-              <a href="/projects" className={header.link}>
-                Projects
-              </a>
-            </li>
-            <li className={header.li}>
-              <a href="/#" className={header.link}>
-                About
-              </a>
-            </li>
-          </ul>
+    <header className={styles.header}>
+      <div className={styles.logo}>NeNorvalls</div>
+      <div className={styles.nav}>
+ 
+        <div className={`${styles.menuIcon} ${showNav ? styles.close : ''}`} onClick={toggleNav}>
+          <div className={styles.hamburgerLine}></div>
+          <div className={styles.hamburgerLine}></div>
+          <div className={styles.hamburgerLine}></div>
         </div>
-      </nav>
+        
+        <nav className={`${styles.navItems} ${showNav ? styles.show : ''}`}>
+          <a href="/">Home</a>
+          <a href="/projects">Projects</a>
+        </nav>
+      </div>
     </header>
   );
 };
