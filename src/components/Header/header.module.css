@@ -1,78 +1,58 @@
 .header {
-  background-color: #333;
-  padding: 15px;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
 }
 
 .logo {
-  margin-right: auto;
-  color: #fff;
-  text-decoration: none;
+  margin-right: 1rem;
+  font-size: 28px;
 }
 
-.nav {
-  display: flex;
-}
-
-.nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-  margin: 0 10px;
-}
-
-.menu-icon {
+.menuIcon {
+  display: none;
+  flex-direction: column;
   cursor: pointer;
-  font-size: 20px;
 }
 
-@media only screen and (max-width: 900px) {
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+@media (max-width: 900px) {
+  .menuIcon {
+    display: flex;
+  }
+
   .nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #fff;
   }
 
-  .nav.show {
+  .nav.open {
     display: flex;
   }
 
-  .nav a {
+  .nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    text-align: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #555;
   }
 
-  .menu-icon {
-    cursor: pointer;
-    display: block;
-  }
-
-  .hamburgerLine {
-    width: 30px;
-    height: 3px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-
-  .close .hamburgerLine:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .close .hamburgerLine:nth-child(2) {
-    opacity: 0;
-  }
-
-  .close .hamburgerLine:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
+  .nav li {
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
   }
 }

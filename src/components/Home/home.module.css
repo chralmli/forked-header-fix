@@ -58,6 +58,19 @@
   }
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* =============================================== */
+
 .content {
   padding: 20px;
   flex: 1;
@@ -90,6 +103,47 @@
   font-size: 22px;
 }
 
+/* Responsive styles */
+@media only screen and (max-width: 1200px) {
+  .skillsParagraph {
+    font-size: 24px;
+  }
+
+  .contributionParagraph {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .skillsParagraph {
+    font-size: 20px;
+  }
+
+  .contributionParagraph {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .skillsParagraph {
+    font-size: 18px;
+  }
+
+  .contributionParagraph {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .skillsParagraph {
+    font-size: 16px;
+  }
+
+  .contributionParagraph {
+    font-size: 14px;
+  }
+}
+
 .readyParagraph {
   margin-bottom: 20px;
 }
@@ -107,13 +161,4 @@
   background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: none;
-  }
-}
+/* ================================ */
